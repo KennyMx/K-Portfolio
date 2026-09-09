@@ -17,25 +17,25 @@ const experience = [
   {
     role: 'Student Software Engineer',
     company: 'Develop for Good',
-    date: 'May — Aug 2026',
+    date: 'May - Aug 2026',
     text: 'Built a multi-vendor marketplace with Next.js and PostgreSQL, helping community vendors support elderly care programs.',
   },
   {
     role: 'Software Engineering Intern',
     company: 'Lillup',
-    date: 'Jan — Apr 2026',
+    date: 'Jan - Apr 2026',
     text: 'Made text-to-speech experiments 40% faster and reduced manual validation by 60% with parallel Python pipelines and precision-aware testing.',
   },
   {
     role: 'Machine Learning Research Assistant',
     company: 'Simon Fraser University',
-    date: 'Jan — Apr 2026',
+    date: 'Jan - Apr 2026',
     text: 'Built computer vision pipelines with YOLO, MediaPipe, and OpenCV. Achieved 0.03 px reprojection error in camera calibration.',
   },
   {
     role: 'Software Engineering Intern',
     company: 'Deepiri',
-    date: 'Sep — Dec 2025',
+    date: 'Sep - Dec 2025',
     text: 'Improved backend performance with Redis caching and connection pooling, reducing repeated database queries by approximately 30%.',
   },
 ];
@@ -133,24 +133,7 @@ export default function Home() {
         </div>
         <section id="experience" className="section experience-section">
           <div className="experience-intro reveal">
-            <p className="eyebrow">EXPERIENCE</p>
-            <h2>
-              Learning by
-              <br />
-              <em>building.</em>
-            </h2>
-            <p>
-              Working with teams, asking better questions, and turning ideas
-              into software that helps.
-            </p>
-            <a
-              className="text-link"
-              href="/kenny-mustapha-resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View full résumé <ArrowUpRight size={17} />
-            </a>
+            <h2>Experience</h2>
           </div>
           <div className="timeline">
             {experience.map((item) => (
@@ -168,17 +151,7 @@ export default function Home() {
         </section>
         <section id="work" className="section work-section">
           <div className="section-heading reveal">
-            <div>
-              <p className="eyebrow">PROJECTS</p>
-              <h2>
-                From curiosity to <em>creation.</em>
-              </h2>
-            </div>
-            <p>
-              A few things I’ve built to make
-              <br />
-              complex problems a little simpler.
-            </p>
+            <h2>Projects</h2>
           </div>
           <div className="projects">
             <article className="project reveal">
@@ -215,7 +188,7 @@ export default function Home() {
                 <h3>Semantic Git Blame</h3>
                 <p>
                   Find the “why” behind the code. Semantic search connects code
-                  to commits, pull requests, and engineering discussions—with
+                  to commits, pull requests, and engineering discussions, with
                   sourced, LLM-generated explanations.
                 </p>
                 <div className="tags">
