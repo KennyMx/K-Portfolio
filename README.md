@@ -18,4 +18,4 @@ npm run build
 npx vercel --prod
 ```
 
-Vercel is configured to publish the static `out` directory. Content is in `app/page.tsx`, styles are in `app/globals.css`, and the provided artwork and résumé are in `public/`.
+Vercel is configured to publish the static `dist/client` directory. Content is in `app/page.tsx`, styles are in `app/globals.css`, and the provided artwork and résumé are in `public/`.
