@@ -307,6 +307,12 @@ h2 {
 .gateway-visual {
   background: #e8edf1;
 }
+.intake-visual {
+  background: #edf0e8;
+}
+.midpoint-visual {
+  background: #e6eef0;
+}
 .visual-label {
   position: absolute;
   top: 22px;
@@ -489,6 +495,140 @@ h2 {
 }
 .gateway-footnote span:nth-of-type(2) {
   margin-left: 12px;
+}
+.intake-card {
+  width: 74%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #cbd9ce;
+  border-radius: 12px;
+  background: #fbfcf7;
+  box-shadow: 0 10px 24px #40594312;
+}
+.intake-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #dce8dc;
+  color: #59785f;
+  font-size: 24px;
+}
+.intake-card small,
+.intake-card strong {
+  display: block;
+}
+.intake-card small {
+  margin-bottom: 5px;
+  color: #78907b;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.intake-card strong {
+  color: #45604b;
+  font:
+    500 14px/1.45 'Manrope',
+    sans-serif;
+}
+.intake-flow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #708674;
+  font-size: 10px;
+}
+.intake-flow span {
+  padding: 5px 8px;
+  border: 1px solid #d1ddd1;
+  border-radius: 5px;
+  background: #f7f9f4;
+}
+.intake-flow i {
+  width: 15px;
+  height: 1px;
+  background: #aebead;
+}
+.map-card {
+  position: relative;
+  width: 76%;
+  height: 140px;
+  overflow: hidden;
+  border: 1px solid #c6d6dc;
+  border-radius: 12px;
+  background:
+    linear-gradient(31deg, transparent 47%, #d2dfe2 48% 49%, transparent 50%),
+    linear-gradient(148deg, transparent 46%, #d5e1e4 47% 48%, transparent 49%),
+    #f6f9f7;
+  box-shadow: 0 10px 24px #30566512;
+}
+.friend-pin,
+.midpoint-pin {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  font-style: normal;
+}
+.friend-pin {
+  width: 26px;
+  height: 26px;
+  background: #8ea9b4;
+  color: white;
+  font-size: 9px;
+}
+.friend-pin::first-letter,
+.midpoint-pin small {
+  transform: rotate(45deg);
+}
+.pin-one {
+  left: 17%;
+  top: 26%;
+}
+.pin-two {
+  right: 17%;
+  bottom: 24%;
+}
+.midpoint-pin {
+  left: 50%;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  translate: -50% -50%;
+  background: #d4b76e;
+  color: #fff9e9;
+  font-size: 17px;
+}
+.midpoint-pin small {
+  position: absolute;
+  left: 32px;
+  top: 31px;
+  color: #58727a;
+  font:
+    10px 'DM Sans',
+    sans-serif;
+}
+.route {
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  border-top: 1px dashed #85a0aa;
+}
+.route-one {
+  left: 24%;
+  width: 28%;
+  transform: rotate(18deg);
+}
+.route-two {
+  right: 23%;
+  width: 29%;
+  transform: rotate(-12deg);
 }
 .project-body {
   padding: 28px 30px 32px;

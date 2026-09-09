@@ -55,13 +55,12 @@ export default function Home() {
           className={menu ? 'navigation open' : 'navigation'}
           aria-label="Main navigation"
         >
-          {['Work', 'Experience', 'About'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={() => setMenu(false)}
-            >
-              {item}
+          {[
+            { label: 'Experience', href: '#experience' },
+            { label: 'Projects', href: '#work' },
+          ].map((item) => (
+            <a key={item.label} href={item.href} onClick={() => setMenu(false)}>
+              {item.label}
             </a>
           ))}
           <a
@@ -95,20 +94,18 @@ export default function Home() {
               BUILDER
             </p>
             <h1 id="hero-title">
-              Hi, I’m Kenny.
-              <br />I build with
+              Hi, I’m Kenny
               <br />
-              <em>purpose.</em>
+              <em>Mustapha.</em>
             </h1>
             <p className="hero-description">
-              Thoughtful software. Real-world impact.
+              A Computer Science student at Simon Fraser University,
               <br />
-              Exploring the space between backend systems,
-              <br className="desktop-break" /> intelligent tools, and the people
-              who use them.
+              graduating in May 2028.
+              <br />I like building useful applications.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#work">
+              <a className="button primary" href="#experience">
                 Explore my work <ArrowDown size={17} />
               </a>
               <a
@@ -130,14 +127,49 @@ export default function Home() {
           <span className="strip-center">
             Computer Science @ Simon Fraser University
           </span>
-          <a href="https://github.com/kennyMx" target="_blank" rel="noreferrer">
-            Find me on GitHub <ArrowUpRight size={15} />
+          <a href="mailto:kom2@sfu.ca">
+            Get in touch <ArrowUpRight size={15} />
           </a>
         </div>
+        <section id="experience" className="section experience-section">
+          <div className="experience-intro reveal">
+            <p className="eyebrow">EXPERIENCE</p>
+            <h2>
+              Learning by
+              <br />
+              <em>building.</em>
+            </h2>
+            <p>
+              Working with teams, asking better questions, and turning ideas
+              into software that helps.
+            </p>
+            <a
+              className="text-link"
+              href="/kenny-mustapha-resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View full résumé <ArrowUpRight size={17} />
+            </a>
+          </div>
+          <div className="timeline">
+            {experience.map((item) => (
+              <article className="experience-item reveal" key={item.company}>
+                <span className="timeline-dot" />
+                <div className="experience-meta">
+                  <span>{item.company}</span>
+                  <time>{item.date}</time>
+                </div>
+                <h3>{item.role}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
         <section id="work" className="section work-section">
           <div className="section-heading reveal">
             <div>
-              <p className="eyebrow">01 / SELECTED WORK</p>
+              <p className="eyebrow">PROJECTS</p>
               <h2>
                 From curiosity to <em>creation.</em>
               </h2>
@@ -231,89 +263,78 @@ export default function Home() {
                 </div>
               </div>
             </article>
-          </div>
-          <a
-            className="text-link work-link"
-            href="https://github.com/kennyMx"
-            target="_blank"
-            rel="noreferrer"
-          >
-            More on GitHub <ArrowUpRight size={17} />
-          </a>
-        </section>
-        <section id="experience" className="section experience-section">
-          <div className="experience-intro reveal">
-            <p className="eyebrow">02 / ALONG THE WAY</p>
-            <h2>
-              Learning by
-              <br />
-              <em>building.</em>
-            </h2>
-            <p>
-              Working with teams, asking better questions, and turning ideas
-              into software that helps.
-            </p>
-            <a
-              className="text-link"
-              href="/kenny-mustapha-resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View full résumé <ArrowUpRight size={17} />
-            </a>
-          </div>
-          <div className="timeline">
-            {experience.map((item) => (
-              <article className="experience-item reveal" key={item.company}>
-                <span className="timeline-dot" />
-                <div className="experience-meta">
-                  <span>{item.company}</span>
-                  <time>{item.date}</time>
+            <article className="project reveal">
+              <div className="project-visual intake-visual" aria-hidden="true">
+                <div className="visual-label">
+                  <Sparkles size={15} /> CLEARER INTAKE, LESS ADMIN
                 </div>
-                <h3>{item.role}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section id="about" className="section about-section">
-          <div className="about-art reveal">
-            <img
-              src="/images/starry-landscape.webp"
-              alt="Painterly blue mountains and golden light reflected across a quiet lake"
-              loading="lazy"
-            />
-            <span>A curious mind. An open horizon.</span>
-          </div>
-          <div className="about-content reveal">
-            <p className="eyebrow">03 / A LITTLE ABOUT ME</p>
-            <h2>
-              Grounded in code.
-              <br />
-              <em>Driven by curiosity.</em>
-            </h2>
-            <p>
-              I’m Kenny Mustapha, a Computer Science student at Simon Fraser
-              University, graduating in May 2028.
-            </p>
-            <p>
-              My work spans backend engineering, applied machine learning, and
-              tools for developers. I enjoy understanding how things work—and
-              finding ways to make them more useful, reliable, and accessible.
-            </p>
-            <div className="toolbox">
-              <h3>Things I work with</h3>
-              <div className="tags">
-                <span>Python</span>
-                <span>TypeScript</span>
-                <span>Go</span>
-                <span>React / Next.js</span>
-                <span>PostgreSQL</span>
-                <span>Redis</span>
-                <span>PyTorch</span>
-                <span>Docker</span>
+                <div className="intake-card">
+                  <span className="intake-mark">✦</span>
+                  <div>
+                    <small>Patient intake</small>
+                    <strong>
+                      Simple questions.
+                      <br />
+                      Useful summaries.
+                    </strong>
+                  </div>
+                </div>
+                <div className="intake-flow">
+                  <span>Patient</span>
+                  <i /> <span>IntakeIQ</span>
+                  <i /> <span>Clinic</span>
+                </div>
               </div>
-            </div>
+              <div className="project-body">
+                <span className="project-number">03 / HEALTHCARE</span>
+                <h3>IntakeIQ</h3>
+                <p>
+                  An AI-powered application that simplifies patient intake for
+                  clinics, turning submitted information into a clearer and more
+                  useful starting point for care teams.
+                </p>
+                <div className="tags">
+                  <span>AI</span>
+                  <span>Patient intake</span>
+                  <span>Clinic workflows</span>
+                </div>
+              </div>
+            </article>
+            <article className="project reveal">
+              <div
+                className="project-visual midpoint-visual"
+                aria-hidden="true"
+              >
+                <div className="visual-label">
+                  <Network size={15} /> MEET IN THE MIDDLE
+                </div>
+                <div className="map-card">
+                  <span className="route route-one" />
+                  <span className="route route-two" />
+                  <i className="friend-pin pin-one">A</i>
+                  <i className="friend-pin pin-two">B</i>
+                  <span className="midpoint-pin">
+                    ✦<small>Midpoint</small>
+                  </span>
+                </div>
+                <div className="gateway-footnote">
+                  <span /> Fair travel time <span /> Better places to meet
+                </div>
+              </div>
+              <div className="project-body">
+                <span className="project-number">04 / GEOSPATIAL</span>
+                <h3>Midpoint</h3>
+                <p>
+                  A geospatial application that helps friends find an optimal
+                  place to meet based on where everyone is starting from.
+                </p>
+                <div className="tags">
+                  <span>Geospatial</span>
+                  <span>Location search</span>
+                  <span>Meetups</span>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
         <section id="contact" className="contact-section reveal">
