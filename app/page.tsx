@@ -9,7 +9,6 @@ import {
   X,
   Download,
   Sparkles,
-  GitBranch,
   Network,
 } from 'lucide-react';
 
@@ -24,13 +23,13 @@ const experience = [
     role: 'Software Engineering Intern',
     company: 'Lillup',
     date: 'Jan - Apr 2026',
-    text: 'Made text-to-speech experiments 40% faster and reduced manual validation by 60% with parallel Python pipelines and precision-aware testing.',
+    text: 'Integrated speech-generation components and data conversion between model stages to enable audio generation. Parallelized Python benchmarks to reduce experiment turnaround by approximately 15%, and automated precision comparisons to reduce manual validation by approximately 20%.',
   },
   {
     role: 'Machine Learning Research Assistant',
     company: 'Simon Fraser University',
     date: 'Jan - Apr 2026',
-    text: 'Built computer vision pipelines with YOLO, MediaPipe, and OpenCV. Achieved 0.03 px reprojection error in camera calibration.',
+    text: 'Built a Python pipeline using YOLOv8, OpenCV camera calibration, and pinhole geometry to estimate object distance from monocular images. Benchmarked estimates against physical measurements, analyzed error sources, and served structured results through FastAPI for reproducible experiments.',
   },
   {
     role: 'Software Engineering Intern',
@@ -90,8 +89,7 @@ export default function Home() {
           <div className="hero-wash" />
           <div className="hero-content">
             <p className="eyebrow">
-              <span className="little-star">✦</span> SOFTWARE ENGINEER & CURIOUS
-              BUILDER
+              <span className="little-star">✦</span> SOFTWARE ENGINEER
             </p>
             <h1 id="hero-title">
               Hi, I’m Kenny
@@ -99,9 +97,9 @@ export default function Home() {
               <em>Mustapha.</em>
             </h1>
             <p className="hero-description">
-              A Computer Science student at Simon Fraser University,
+              Studying Computer Science at Simon Fraser University.
               <br />
-              graduating in May 2028.
+              B.Sc. expected December 2027.
               <br />I like building useful applications.
             </p>
             <div className="hero-actions">
@@ -118,14 +116,11 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="hero-caption">
-            <span /> A little curiosity goes a long way.
-          </div>
         </section>
         <div className="intro-strip">
           <span>BASED IN BURNABY, BC</span>
           <span className="strip-center">
-            Computer Science @ Simon Fraser University
+            B.Sc. Computer Science · SFU · December 2027
           </span>
           <a href="mailto:kom2@sfu.ca">
             Get in touch <ArrowUpRight size={15} />
@@ -155,60 +150,63 @@ export default function Home() {
           </div>
           <div className="projects">
             <article className="project reveal">
-              <div className="project-visual blame-visual" aria-hidden="true">
+              <div className="project-visual fly-visual" aria-hidden="true">
                 <div className="visual-label">
-                  <GitBranch size={15} /> CONTEXT, BEYOND THE COMMIT
+                  <Network size={15} /> FLY FOUR
                 </div>
-                <div className="code-window">
-                  <div className="window-dots">
-                    <i />
-                    <i />
-                    <i />
-                    <span>why this line?</span>
-                  </div>
-                  <div className="code-line">
-                    <span>24</span> <b>const</b> context = <b>await</b>{' '}
-                    retrieve(code);
-                  </div>
-                  <div className="context-answer">
-                    <Sparkles size={17} />
-                    <div>
-                      Every line has a story.
-                      <small>Code → commits → the reasoning behind it</small>
-                    </div>
-                  </div>
-                  <div className="commit-line">
-                    <span /> commit history <i /> engineering context
-                  </div>
+                <div className="fly-board">
+                  {Array.from({ length: 42 }, (_, index) => (
+                    <span
+                      key={index}
+                      className={
+                        index >= 28 && [29, 31, 35, 37, 39].includes(index)
+                          ? 'piece-gold'
+                          : [23, 30, 36, 38, 40].includes(index)
+                            ? 'piece-blue'
+                            : ''
+                      }
+                    />
+                  ))}
                 </div>
-                <span className="visual-orbit" />
+                <div className="fly-caption">
+                  166,700 neurons · one game board
+                </div>
               </div>
               <div className="project-body">
-                <span className="project-number">01 / DEVELOPER TOOLS</span>
-                <h3>Semantic Git Blame</h3>
+                <span className="project-number">01 / APPLIED ML</span>
+                <h3>Fly Four</h3>
                 <p>
-                  Find the “why” behind the code. Semantic search connects code
-                  to commits, pull requests, and engineering discussions, with
-                  sourced, LLM-generated explanations.
+                  Connect Four against a trained model that reads activity from
+                  a simulated fruit-fly connectome. Real neural wiring powers
+                  the simulation, with a live visualization of neuron activity.
                 </p>
                 <div className="tags">
                   <span>Python</span>
                   <span>FastAPI</span>
-                  <span>PostgreSQL</span>
-                  <span>pgvector</span>
+                  <span>React</span>
+                  <span>Machine learning</span>
                 </div>
+                <a
+                  className="project-link"
+                  href="https://github.com/KennyMx/FlyFour"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="View Fly Four on GitHub"
+                >
+                  View on GitHub <ArrowUpRight size={16} />
+                </a>
               </div>
             </article>
             <article className="project reveal">
               <div className="project-visual gateway-visual" aria-hidden="true">
                 <div className="visual-label">
-                  <Network size={15} /> ONE INTERFACE. MORE POSSIBILITIES.
+                  <Network size={15} /> RELAY
                 </div>
                 <div className="gateway-diagram">
                   <div className="gateway-node">Your app</div>
                   <span className="connector" />
                   <div className="gateway-core">
-                    ✦<small>LLM Gateway</small>
+                    ✦<small>Relay</small>
                   </div>
                   <div className="provider-lines">
                     <span>OpenAI</span>
@@ -222,11 +220,12 @@ export default function Home() {
               </div>
               <div className="project-body">
                 <span className="project-number">02 / INFRASTRUCTURE</span>
-                <h3>LLM API Gateway</h3>
+                <h3>Relay</h3>
                 <p>
-                  One dependable interface for multiple AI providers. A
-                  self-hosted gateway with model routing, per-key rate limits,
-                  live cost tracking, and automatic provider fallback.
+                  A Go toolkit for routing AI tasks and tracking actual token
+                  usage. Includes a native Codex launcher and a self-hosted API
+                  gateway with rate limits, cost tracking, and provider
+                  fallback.
                 </p>
                 <div className="tags">
                   <span>Go</span>
@@ -234,6 +233,15 @@ export default function Home() {
                   <span>Redis</span>
                   <span>Docker</span>
                 </div>
+                <a
+                  className="project-link"
+                  href="https://github.com/KennyMx/Relay"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="View Relay on GitHub"
+                >
+                  View on GitHub <ArrowUpRight size={16} />
+                </a>
               </div>
             </article>
             <article className="project reveal">
@@ -262,15 +270,27 @@ export default function Home() {
                 <span className="project-number">03 / HEALTHCARE</span>
                 <h3>IntakeIQ</h3>
                 <p>
-                  An AI-powered application that simplifies patient intake for
-                  clinics, turning submitted information into a clearer and more
-                  useful starting point for care teams.
+                  An AI-powered patient intake and triage platform for clinics.
+                  Built with TypeScript and Python on AWS, with asynchronous
+                  processing and Redis caching that reduced processing latency
+                  by 40%.
                 </p>
                 <div className="tags">
-                  <span>AI</span>
-                  <span>Patient intake</span>
-                  <span>Clinic workflows</span>
+                  <span>TypeScript</span>
+                  <span>Python</span>
+                  <span>AWS</span>
+                  <span>Redis</span>
+                  <span>Kubernetes</span>
                 </div>
+                <a
+                  className="project-link"
+                  href="https://intake-iq.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Visit IntakeIQ"
+                >
+                  Visit IntakeIQ <ArrowUpRight size={16} />
+                </a>
               </div>
             </article>
             <article className="project reveal">
