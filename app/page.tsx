@@ -35,7 +35,7 @@ const experience = [
     role: 'Software Engineering Intern',
     company: 'Deepiri',
     date: 'Sep - Dec 2025',
-    text: 'Improved backend performance with Redis caching and connection pooling, reducing repeated database queries by approximately 30%.',
+    text: 'Reduced PostgreSQL queries by approximately 30% on cacheable API endpoints through concurrent load testing and Redis caching. Built Python monitoring for latency, cache hit rates, and connection pool utilization.',
   },
 ];
 
@@ -222,10 +222,10 @@ export default function Home() {
                 <span className="project-number">02 / INFRASTRUCTURE</span>
                 <h3>Relay</h3>
                 <p>
-                  A Go toolkit for routing AI tasks and tracking actual token
-                  usage. Includes a native Codex launcher and a self-hosted API
-                  gateway with rate limits, cost tracking, and provider
-                  fallback.
+                  A Go router that selects AI models and reasoning settings,
+                  with a Codex plugin and JavaScript dashboard for token usage,
+                  execution time, and run outcomes. It also supports rate limits
+                  and provider fallback.
                 </p>
                 <div className="tags">
                   <span>Go</span>
@@ -294,38 +294,53 @@ export default function Home() {
               </div>
             </article>
             <article className="project reveal">
-              <div
-                className="project-visual midpoint-visual"
-                aria-hidden="true"
-              >
+              <div className="project-visual pitch-visual" aria-hidden="true">
                 <div className="visual-label">
-                  <Network size={15} /> MEET IN THE MIDDLE
+                  <Network size={15} /> SEE THE GAME BENEATH THE GAME
                 </div>
-                <div className="map-card">
-                  <span className="route route-one" />
-                  <span className="route route-two" />
-                  <i className="friend-pin pin-one">A</i>
-                  <i className="friend-pin pin-two">B</i>
-                  <span className="midpoint-pin">
-                    ✦<small>Midpoint</small>
-                  </span>
-                </div>
-                <div className="gateway-footnote">
-                  <span /> Fair travel time <span /> Better places to meet
+                <div className="pitch-preview">
+                  <div className="pitch-field">
+                    <span className="pitch-center" />
+                    <span className="pitch-box pitch-box-left" />
+                    <span className="pitch-box pitch-box-right" />
+                    <i className="pitch-player team-a player-a1" />
+                    <i className="pitch-player team-a player-a2" />
+                    <i className="pitch-player team-a player-a3" />
+                    <i className="pitch-player team-b player-b1" />
+                    <i className="pitch-player team-b player-b2" />
+                    <i className="pitch-player team-b player-b3" />
+                    <i className="pitch-ball" />
+                  </div>
+                  <div className="pitch-playback">
+                    <span />
+                    <small>00:12 / 00:30</small>
+                  </div>
                 </div>
               </div>
               <div className="project-body">
-                <span className="project-number">04 / GEOSPATIAL</span>
-                <h3>Midpoint</h3>
+                <span className="project-number">04 / COMPUTER VISION</span>
+                <h3>PitchState</h3>
                 <p>
-                  A geospatial application that helps friends find an optimal
-                  place to meet based on where everyone is starting from.
+                  Upload a soccer clip to explore player and ball tracking, a
+                  reconstructed pitch view, tactical game state, and next-action
+                  predictions in a synchronized replay.
                 </p>
                 <div className="tags">
-                  <span>Geospatial</span>
-                  <span>Location search</span>
-                  <span>Meetups</span>
+                  <span>Python</span>
+                  <span>FastAPI</span>
+                  <span>OpenCV</span>
+                  <span>PyTorch</span>
+                  <span>React</span>
                 </div>
+                <a
+                  className="project-link"
+                  href="https://github.com/KennyMx/PitchState"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="View PitchState on GitHub"
+                >
+                  View on GitHub <ArrowUpRight size={16} />
+                </a>
               </div>
             </article>
           </div>
