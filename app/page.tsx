@@ -139,251 +139,263 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="intro-strip">
-          <span>BASED IN BURNABY, BC</span>
-          <span className="strip-center">
-            B.Sc. Computer Science · SFU · December 2027
-          </span>
-          <a href="mailto:kom2@sfu.ca">
-            Get in touch <ArrowUpRight size={15} />
-          </a>
-        </div>
-        <section id="experience" className="section experience-section">
-          <div className="experience-intro reveal">
-            <h2>Experience</h2>
+        <div className="night-landscape">
+          <div className="intro-strip">
+            <span>BASED IN BURNABY, BC</span>
+            <span className="strip-center">
+              B.Sc. Computer Science · SFU · December 2027
+            </span>
+            <a href="mailto:kom2@sfu.ca">
+              Get in touch <ArrowUpRight size={15} />
+            </a>
           </div>
-          <div className="timeline">
-            {experience.map((item) => (
-              <article className="experience-item reveal" key={item.company}>
-                <span className="timeline-dot" />
-                <div className="experience-meta">
-                  <span>{item.company}</span>
-                  <time>{item.date}</time>
+          <section id="experience" className="section experience-section">
+            <div className="experience-intro reveal">
+              <h2>Experience</h2>
+            </div>
+            <div className="timeline">
+              {experience.map((item) => (
+                <article className="experience-item reveal" key={item.company}>
+                  <span className="timeline-dot" />
+                  <div className="experience-meta">
+                    <span>{item.company}</span>
+                    <time>{item.date}</time>
+                  </div>
+                  <h3>{item.role}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+          <section id="work" className="section work-section">
+            <div className="section-heading reveal">
+              <h2>Projects</h2>
+            </div>
+            <div className="projects">
+              <article className="project reveal">
+                <div className="project-visual fly-visual" aria-hidden="true">
+                  <div className="visual-label">
+                    <Network size={15} /> FLY FOUR
+                  </div>
+                  <div className="fly-board">
+                    {Array.from({ length: 42 }, (_, index) => (
+                      <span
+                        key={index}
+                        className={
+                          index >= 28 && [29, 31, 35, 37, 39].includes(index)
+                            ? 'piece-gold'
+                            : [23, 30, 36, 38, 40].includes(index)
+                              ? 'piece-blue'
+                              : ''
+                        }
+                      />
+                    ))}
+                  </div>
+                  <div className="fly-caption">
+                    166,700 neurons · one game board
+                  </div>
                 </div>
-                <h3>{item.role}</h3>
-                <p>{item.text}</p>
+                <div className="project-body">
+                  <span className="project-number">01 / APPLIED ML</span>
+                  <h3>Fly Four</h3>
+                  <p>
+                    Connect Four against a trained model that reads activity
+                    from a simulated fruit-fly connectome. Real neural wiring
+                    powers the simulation, with a live visualization of neuron
+                    activity.
+                  </p>
+                  <div className="tags">
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>React</span>
+                    <span>Machine learning</span>
+                  </div>
+                  <a
+                    className="project-link"
+                    href="https://github.com/KennyMx/FlyFour"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="View Fly Four on GitHub"
+                  >
+                    View on GitHub <ArrowUpRight size={16} />
+                  </a>
+                </div>
               </article>
-            ))}
-          </div>
-        </section>
-        <section id="work" className="section work-section">
-          <div className="section-heading reveal">
-            <h2>Projects</h2>
-          </div>
-          <div className="projects">
-            <article className="project project-featured reveal">
-              <div className="project-visual pitch-visual" aria-hidden="true">
-                <div className="pitch-preview">
-                  <div className="pitch-field">
-                    <span className="pitch-center" />
-                    <span className="pitch-box pitch-box-left" />
-                    <span className="pitch-box pitch-box-right" />
-                    <i className="pitch-player team-a player-a1" />
-                    <i className="pitch-player team-a player-a2" />
-                    <i className="pitch-player team-a player-a3" />
-                    <i className="pitch-player team-b player-b1" />
-                    <i className="pitch-player team-b player-b2" />
-                    <i className="pitch-player team-b player-b3" />
-                    <i className="pitch-ball" />
-                  </div>
-                  <div className="pitch-playback">
-                    <span />
-                    <small>00:12 / 00:30</small>
-                  </div>
-                </div>
-              </div>
-              <div className="project-body">
-                <span className="project-number">Computer vision</span>
-                <h3>PitchState</h3>
-                <p>
-                  Upload a soccer clip to explore player and ball tracking, a
-                  reconstructed pitch view, tactical game state, and next-action
-                  predictions in a synchronized replay.
-                </p>
-                <div className="tags">
-                  <span>Python</span>
-                  <span>FastAPI</span>
-                  <span>OpenCV</span>
-                  <span>PyTorch</span>
-                  <span>React</span>
-                </div>
-                <a
-                  className="project-link"
-                  href="https://github.com/KennyMx/PitchState"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="View PitchState on GitHub"
+              <article className="project reveal">
+                <div
+                  className="project-visual gateway-visual"
+                  aria-hidden="true"
                 >
-                  View on GitHub
-                </a>
-              </div>
-            </article>
-            <article className="project reveal">
-              <div className="project-visual fly-visual" aria-hidden="true">
-                <div className="visual-label">
-                  <Network size={15} /> FLY FOUR
-                </div>
-                <div className="fly-board">
-                  {Array.from({ length: 42 }, (_, index) => (
-                    <span
-                      key={index}
-                      className={
-                        index >= 28 && [29, 31, 35, 37, 39].includes(index)
-                          ? 'piece-gold'
-                          : [23, 30, 36, 38, 40].includes(index)
-                            ? 'piece-blue'
-                            : ''
-                      }
-                    />
-                  ))}
-                </div>
-                <div className="fly-caption">
-                  166,700 neurons · one game board
-                </div>
-              </div>
-              <div className="project-body">
-                <span className="project-number">01 / APPLIED ML</span>
-                <h3>Fly Four</h3>
-                <p>
-                  Connect Four against a trained model that reads activity from
-                  a simulated fruit-fly connectome. Real neural wiring powers
-                  the simulation, with a live visualization of neuron activity.
-                </p>
-                <div className="tags">
-                  <span>Python</span>
-                  <span>FastAPI</span>
-                  <span>React</span>
-                  <span>Machine learning</span>
-                </div>
-                <a
-                  className="project-link"
-                  href="https://github.com/KennyMx/FlyFour"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="View Fly Four on GitHub"
-                >
-                  View on GitHub <ArrowUpRight size={16} />
-                </a>
-              </div>
-            </article>
-            <article className="project reveal">
-              <div className="project-visual gateway-visual" aria-hidden="true">
-                <div className="visual-label">
-                  <Network size={15} /> RELAY
-                </div>
-                <div className="gateway-diagram">
-                  <div className="gateway-node">Your app</div>
-                  <span className="connector" />
-                  <div className="gateway-core">
-                    ✦<small>Relay</small>
+                  <div className="visual-label">
+                    <Network size={15} /> RELAY
                   </div>
-                  <div className="provider-lines">
-                    <span>OpenAI</span>
-                    <span>Anthropic</span>
-                    <span>Cohere</span>
+                  <div className="gateway-diagram">
+                    <div className="gateway-node">Your app</div>
+                    <span className="connector" />
+                    <div className="gateway-core">
+                      ✦<small>Relay</small>
+                    </div>
+                    <div className="provider-lines">
+                      <span>OpenAI</span>
+                      <span>Anthropic</span>
+                      <span>Cohere</span>
+                    </div>
+                  </div>
+                  <div className="gateway-footnote">
+                    <span /> Intelligent routing <span /> Built-in resilience
                   </div>
                 </div>
-                <div className="gateway-footnote">
-                  <span /> Intelligent routing <span /> Built-in resilience
+                <div className="project-body">
+                  <span className="project-number">02 / INFRASTRUCTURE</span>
+                  <h3>Relay</h3>
+                  <p>
+                    A Go router that selects AI models and reasoning settings,
+                    with a Codex plugin and JavaScript dashboard for token
+                    usage, execution time, and run outcomes. It also supports
+                    rate limits and provider fallback.
+                  </p>
+                  <div className="tags">
+                    <span>Go</span>
+                    <span>PostgreSQL</span>
+                    <span>Redis</span>
+                    <span>Docker</span>
+                  </div>
+                  <a
+                    className="project-link"
+                    href="https://github.com/KennyMx/Relay"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="View Relay on GitHub"
+                  >
+                    View on GitHub <ArrowUpRight size={16} />
+                  </a>
                 </div>
-              </div>
-              <div className="project-body">
-                <span className="project-number">02 / INFRASTRUCTURE</span>
-                <h3>Relay</h3>
-                <p>
-                  A Go router that selects AI models and reasoning settings,
-                  with a Codex plugin and JavaScript dashboard for token usage,
-                  execution time, and run outcomes. It also supports rate limits
-                  and provider fallback.
-                </p>
-                <div className="tags">
-                  <span>Go</span>
-                  <span>PostgreSQL</span>
-                  <span>Redis</span>
-                  <span>Docker</span>
-                </div>
-                <a
-                  className="project-link"
-                  href="https://github.com/KennyMx/Relay"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="View Relay on GitHub"
+              </article>
+              <article className="project reveal">
+                <div
+                  className="project-visual intake-visual"
+                  aria-hidden="true"
                 >
-                  View on GitHub <ArrowUpRight size={16} />
-                </a>
-              </div>
-            </article>
-            <article className="project reveal">
-              <div className="project-visual intake-visual" aria-hidden="true">
-                <div className="visual-label">
-                  <Sparkles size={15} /> CLEARER INTAKE, LESS ADMIN
-                </div>
-                <div className="intake-card">
-                  <span className="intake-mark">✦</span>
-                  <div>
-                    <small>Patient intake</small>
-                    <strong>
-                      Simple questions.
-                      <br />
-                      Useful summaries.
-                    </strong>
+                  <div className="visual-label">
+                    <Sparkles size={15} /> CLEARER INTAKE, LESS ADMIN
+                  </div>
+                  <div className="intake-card">
+                    <span className="intake-mark">✦</span>
+                    <div>
+                      <small>Patient intake</small>
+                      <strong>
+                        Simple questions.
+                        <br />
+                        Useful summaries.
+                      </strong>
+                    </div>
+                  </div>
+                  <div className="intake-flow">
+                    <span>Patient</span>
+                    <i /> <span>IntakeIQ</span>
+                    <i /> <span>Clinic</span>
                   </div>
                 </div>
-                <div className="intake-flow">
-                  <span>Patient</span>
-                  <i /> <span>IntakeIQ</span>
-                  <i /> <span>Clinic</span>
+                <div className="project-body">
+                  <span className="project-number">03 / HEALTHCARE</span>
+                  <h3>IntakeIQ</h3>
+                  <p>
+                    An AI-powered patient intake and triage platform for
+                    clinics. Built with TypeScript and Python on AWS, with
+                    asynchronous processing and Redis caching that reduced
+                    processing latency by 40%.
+                  </p>
+                  <div className="tags">
+                    <span>TypeScript</span>
+                    <span>Python</span>
+                    <span>AWS</span>
+                    <span>Redis</span>
+                    <span>Kubernetes</span>
+                  </div>
+                  <a
+                    className="project-link"
+                    href="https://intake-iq.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Visit IntakeIQ"
+                  >
+                    Visit IntakeIQ <ArrowUpRight size={16} />
+                  </a>
                 </div>
-              </div>
-              <div className="project-body">
-                <span className="project-number">03 / HEALTHCARE</span>
-                <h3>IntakeIQ</h3>
-                <p>
-                  An AI-powered patient intake and triage platform for clinics.
-                  Built with TypeScript and Python on AWS, with asynchronous
-                  processing and Redis caching that reduced processing latency
-                  by 40%.
-                </p>
-                <div className="tags">
-                  <span>TypeScript</span>
-                  <span>Python</span>
-                  <span>AWS</span>
-                  <span>Redis</span>
-                  <span>Kubernetes</span>
+              </article>
+              <article className="project reveal">
+                <div className="project-visual pitch-visual" aria-hidden="true">
+                  <div className="visual-label">
+                    <Network size={15} /> SEE THE GAME BENEATH THE GAME
+                  </div>
+                  <div className="pitch-preview">
+                    <div className="pitch-field">
+                      <span className="pitch-center" />
+                      <span className="pitch-box pitch-box-left" />
+                      <span className="pitch-box pitch-box-right" />
+                      <i className="pitch-player team-a player-a1" />
+                      <i className="pitch-player team-a player-a2" />
+                      <i className="pitch-player team-a player-a3" />
+                      <i className="pitch-player team-b player-b1" />
+                      <i className="pitch-player team-b player-b2" />
+                      <i className="pitch-player team-b player-b3" />
+                      <i className="pitch-ball" />
+                    </div>
+                    <div className="pitch-playback">
+                      <span />
+                      <small>00:12 / 00:30</small>
+                    </div>
+                  </div>
                 </div>
-                <a
-                  className="project-link"
-                  href="https://intake-iq.vercel.app/"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Visit IntakeIQ"
-                >
-                  Visit IntakeIQ <ArrowUpRight size={16} />
-                </a>
-              </div>
-            </article>
-          </div>
-        </section>
-        <section id="contact" className="contact-section reveal">
-          <span className="contact-star">✦</span>
-          <p className="eyebrow">HAVE SOMETHING IN MIND?</p>
-          <h2>
-            Let’s build something
-            <br />
-            <em>meaningful.</em>
-          </h2>
-          <p>
-            An opportunity, an idea, or just a hello.
-            <br />
-            I’d love to hear from you.
-          </p>
-          <a className="button primary" href="mailto:kom2@sfu.ca">
-            Say hello <ArrowUpRight size={18} />
-          </a>
-          <a className="email-link" href="mailto:kom2@sfu.ca">
-            kom2@sfu.ca
-          </a>
-        </section>
+                <div className="project-body">
+                  <span className="project-number">04 / COMPUTER VISION</span>
+                  <h3>PitchState</h3>
+                  <p>
+                    Upload a soccer clip to explore player and ball tracking, a
+                    reconstructed pitch view, tactical game state, and
+                    next-action predictions in a synchronized replay.
+                  </p>
+                  <div className="tags">
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>OpenCV</span>
+                    <span>PyTorch</span>
+                    <span>React</span>
+                  </div>
+                  <a
+                    className="project-link"
+                    href="https://github.com/KennyMx/PitchState"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="View PitchState on GitHub"
+                  >
+                    View on GitHub <ArrowUpRight size={16} />
+                  </a>
+                </div>
+              </article>
+            </div>
+          </section>
+          <section id="contact" className="contact-section reveal">
+            <span className="contact-star">✦</span>
+            <p className="eyebrow">HAVE SOMETHING IN MIND?</p>
+            <h2>
+              Let’s build something
+              <br />
+              <em>meaningful.</em>
+            </h2>
+            <p>
+              An opportunity, an idea, or just a hello.
+              <br />
+              I’d love to hear from you.
+            </p>
+            <a className="button primary" href="mailto:kom2@sfu.ca">
+              Say hello <ArrowUpRight size={18} />
+            </a>
+            <a className="email-link" href="mailto:kom2@sfu.ca">
+              kom2@sfu.ca
+            </a>
+          </section>
+        </div>
       </main>
       <footer>
         <a className="wordmark" href="#">

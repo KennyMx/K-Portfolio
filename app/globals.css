@@ -367,79 +367,6 @@ h2 {
     background 0.2s,
     border-color 0.2s;
 }
-.project-link:hover {
-  background: #eaf0ec;
-  border-color: #91aaa7;
-}
-.project.project-featured {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  background: #152d44;
-  border-color: #2b4a63;
-  color: #f6f5ed;
-}
-.project-featured .pitch-visual {
-  height: auto;
-  min-height: 260px;
-  background: radial-gradient(ellipse at top left, #355a71, #19364f 72%);
-}
-.project-featured .pitch-preview {
-  width: min(86%, 430px);
-  margin: 0;
-  background: #213f55;
-  border-color: #698894;
-}
-.project-featured .pitch-field {
-  height: auto;
-  aspect-ratio: 2 / 1;
-}
-.project-featured .pitch-playback {
-  color: #c8dce4;
-}
-.project-featured .project-body {
-  justify-content: center;
-  padding: clamp(24px, 4vw, 48px);
-}
-.project-featured .project-number {
-  color: #efd18d;
-}
-.project-featured h3 {
-  font-size: clamp(32px, 5vw, 54px);
-}
-.project-featured p {
-  color: #d6e2e8;
-}
-.project-featured .tags {
-  margin-top: 0;
-}
-.project-featured .tags span {
-  background: #213d55;
-  border-color: #527389;
-  color: #e2edf1;
-}
-.project-featured .project-link {
-  background: #eed38f;
-  border-color: #eed38f;
-  color: #182e43;
-}
-.project-featured .project-link:hover {
-  background: #f8e4af;
-  border-color: #f8e4af;
-}
-@media (min-width: 1050px) {
-  .projects {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-@media (max-width: 700px) {
-  .project.project-featured {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .project-featured .pitch-visual {
-    min-height: 210px;
-  }
-}
 .hero-description {
   max-width: 470px;
 }
@@ -973,6 +900,65 @@ h2 {
 .contact-section p:not(.eyebrow) {
   font-size: 15px;
   margin: 22px 0;
+}
+.night-landscape {
+  --night-text: #d0dcea;
+  --night-gold: #f2d596;
+  --line: #e0e5df38;
+  color: #f8f4e9;
+  background-color: #101f32;
+  background-image:
+    radial-gradient(circle at 13px 29px, #eed09480 0 1px, transparent 1.6px),
+    radial-gradient(circle at 70px 52px, #d4e8ff60 0 0.7px, transparent 1.4px),
+    radial-gradient(circle at 88% 35%, #2f566e 0, transparent 42%),
+    radial-gradient(circle at 10% 67%, #32425f 0, transparent 46%),
+    linear-gradient(160deg, #213950, #101c2e 58%, #1d3448);
+  background-size:
+    173px 139px,
+    109px 113px,
+    auto,
+    auto,
+    auto;
+}
+.night-landscape .intro-strip,
+.night-landscape .experience-item p,
+.night-landscape .experience-meta time,
+.night-landscape .contact-section p,
+.night-landscape .email-link {
+  color: var(--night-text);
+}
+.night-landscape .experience-section {
+  border-top: 0;
+}
+.night-landscape .timeline {
+  border-color: #dbe6f444;
+}
+.night-landscape .timeline-dot {
+  background: var(--night-gold);
+  border-color: #1c3248;
+  box-shadow: 0 0 0 1px #f2d59672;
+}
+.night-landscape .experience-meta,
+.night-landscape .contact-section h2 em,
+.night-landscape .contact-star {
+  color: var(--night-gold);
+}
+.night-landscape .project {
+  --line: #e0e5df;
+  color: var(--ink);
+}
+.night-landscape .contact-section {
+  border-color: var(--line);
+  background:
+    linear-gradient(180deg, #132438 0%, #132438e8 34%, #122337c9 100%),
+    url('/images/starry-landscape.webp') center 68% / cover;
+}
+.night-landscape .contact-section .button {
+  background: var(--night-gold);
+  color: #182e43;
+}
+.night-landscape .contact-section .button:hover {
+  background: #fae5b7;
 }
 .email-link {
   display: block;
