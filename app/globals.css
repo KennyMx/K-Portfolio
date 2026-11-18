@@ -918,14 +918,40 @@ h2 {
   --line: #c6d5d6;
   background-color: var(--landscape-edge);
   background-image:
-    linear-gradient(var(--landscape-edge), transparent 220px),
-    radial-gradient(circle at 13px 29px, #c6994540 0 1px, transparent 1.6px),
+    linear-gradient(var(--landscape-edge), transparent 150px),
+    radial-gradient(
+      ellipse 1.5px 7px at 29px 46px,
+      #a973278c 0 30%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 6px 1.5px at 29px 46px,
+      #a973278c 0 25%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 1.2px 5px at 126px 89px,
+      #5079948c 0 30%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 4.5px 1.2px at 126px 89px,
+      #5079948c 0 25%,
+      transparent 100%
+    ),
+    radial-gradient(circle at 77px 103px, #a9732780 0 1.3px, transparent 2px),
+    radial-gradient(circle at 15px 22px, #50799466 0 1px, transparent 1.8px),
     radial-gradient(ellipse at 92% 32%, #d4e5f0, transparent 56%),
     radial-gradient(ellipse at 3% 76%, #ebdfbf80, transparent 55%),
     linear-gradient(180deg, var(--landscape-edge), #e7eef1 56%, #f0efe5);
   background-size:
     auto,
-    151px 127px,
+    239px 183px,
+    239px 183px,
+    307px 233px,
+    307px 233px,
+    187px 147px,
+    137px 113px,
     auto,
     auto,
     auto;
