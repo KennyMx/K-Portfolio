@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   ArrowUpRight,
   ArrowDown,
@@ -41,6 +41,28 @@ const experience = [
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
+
+  useEffect(() => {
+    if (!('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      },
+      { rootMargin: '0px 0px -24px 0px' },
+    );
+
+    document.querySelectorAll('main .reveal').forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <a className="skip-link" href="#main">
@@ -149,6 +171,53 @@ export default function Home() {
             <h2>Projects</h2>
           </div>
           <div className="projects">
+            <article className="project project-featured reveal">
+              <div className="project-visual pitch-visual" aria-hidden="true">
+                <div className="pitch-preview">
+                  <div className="pitch-field">
+                    <span className="pitch-center" />
+                    <span className="pitch-box pitch-box-left" />
+                    <span className="pitch-box pitch-box-right" />
+                    <i className="pitch-player team-a player-a1" />
+                    <i className="pitch-player team-a player-a2" />
+                    <i className="pitch-player team-a player-a3" />
+                    <i className="pitch-player team-b player-b1" />
+                    <i className="pitch-player team-b player-b2" />
+                    <i className="pitch-player team-b player-b3" />
+                    <i className="pitch-ball" />
+                  </div>
+                  <div className="pitch-playback">
+                    <span />
+                    <small>00:12 / 00:30</small>
+                  </div>
+                </div>
+              </div>
+              <div className="project-body">
+                <span className="project-number">Computer vision</span>
+                <h3>PitchState</h3>
+                <p>
+                  Upload a soccer clip to explore player and ball tracking, a
+                  reconstructed pitch view, tactical game state, and next-action
+                  predictions in a synchronized replay.
+                </p>
+                <div className="tags">
+                  <span>Python</span>
+                  <span>FastAPI</span>
+                  <span>OpenCV</span>
+                  <span>PyTorch</span>
+                  <span>React</span>
+                </div>
+                <a
+                  className="project-link"
+                  href="https://github.com/KennyMx/PitchState"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="View PitchState on GitHub"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </article>
             <article className="project reveal">
               <div className="project-visual fly-visual" aria-hidden="true">
                 <div className="visual-label">
@@ -290,56 +359,6 @@ export default function Home() {
                   aria-label="Visit IntakeIQ"
                 >
                   Visit IntakeIQ <ArrowUpRight size={16} />
-                </a>
-              </div>
-            </article>
-            <article className="project reveal">
-              <div className="project-visual pitch-visual" aria-hidden="true">
-                <div className="visual-label">
-                  <Network size={15} /> SEE THE GAME BENEATH THE GAME
-                </div>
-                <div className="pitch-preview">
-                  <div className="pitch-field">
-                    <span className="pitch-center" />
-                    <span className="pitch-box pitch-box-left" />
-                    <span className="pitch-box pitch-box-right" />
-                    <i className="pitch-player team-a player-a1" />
-                    <i className="pitch-player team-a player-a2" />
-                    <i className="pitch-player team-a player-a3" />
-                    <i className="pitch-player team-b player-b1" />
-                    <i className="pitch-player team-b player-b2" />
-                    <i className="pitch-player team-b player-b3" />
-                    <i className="pitch-ball" />
-                  </div>
-                  <div className="pitch-playback">
-                    <span />
-                    <small>00:12 / 00:30</small>
-                  </div>
-                </div>
-              </div>
-              <div className="project-body">
-                <span className="project-number">04 / COMPUTER VISION</span>
-                <h3>PitchState</h3>
-                <p>
-                  Upload a soccer clip to explore player and ball tracking, a
-                  reconstructed pitch view, tactical game state, and next-action
-                  predictions in a synchronized replay.
-                </p>
-                <div className="tags">
-                  <span>Python</span>
-                  <span>FastAPI</span>
-                  <span>OpenCV</span>
-                  <span>PyTorch</span>
-                  <span>React</span>
-                </div>
-                <a
-                  className="project-link"
-                  href="https://github.com/KennyMx/PitchState"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="View PitchState on GitHub"
-                >
-                  View on GitHub <ArrowUpRight size={16} />
                 </a>
               </div>
             </article>
