@@ -6,6 +6,7 @@
   --blue: #235674;
   --gold: #c39744;
   --line: #e0e5df;
+  --landscape-edge: #eaf1ef;
   font-family: 'DM Sans', sans-serif;
   color: var(--ink);
   background: var(--paper);
@@ -118,6 +119,18 @@ p {
     rgba(236, 241, 228, 0.78) 37%,
     rgba(228, 238, 221, 0.15) 62%,
     transparent 80%
+  );
+}
+.hero-wash::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: clamp(88px, 16vh, 152px);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #eaf1ef73 48%,
+    var(--landscape-edge)
   );
 }
 .hero-content {
@@ -901,64 +914,36 @@ h2 {
   font-size: 15px;
   margin: 22px 0;
 }
-.night-landscape {
-  --night-text: #d0dcea;
-  --night-gold: #f2d596;
-  --line: #e0e5df38;
-  color: #f8f4e9;
-  background-color: #101f32;
+.landscape-body {
+  --line: #c6d5d6;
+  background-color: var(--landscape-edge);
   background-image:
-    radial-gradient(circle at 13px 29px, #eed09480 0 1px, transparent 1.6px),
-    radial-gradient(circle at 70px 52px, #d4e8ff60 0 0.7px, transparent 1.4px),
-    radial-gradient(circle at 88% 35%, #2f566e 0, transparent 42%),
-    radial-gradient(circle at 10% 67%, #32425f 0, transparent 46%),
-    linear-gradient(160deg, #213950, #101c2e 58%, #1d3448);
+    linear-gradient(var(--landscape-edge), transparent 220px),
+    radial-gradient(circle at 13px 29px, #c6994540 0 1px, transparent 1.6px),
+    radial-gradient(ellipse at 92% 32%, #d4e5f0, transparent 56%),
+    radial-gradient(ellipse at 3% 76%, #ebdfbf80, transparent 55%),
+    linear-gradient(180deg, var(--landscape-edge), #e7eef1 56%, #f0efe5);
   background-size:
-    173px 139px,
-    109px 113px,
+    auto,
+    151px 127px,
     auto,
     auto,
     auto;
 }
-.night-landscape .intro-strip,
-.night-landscape .experience-item p,
-.night-landscape .experience-meta time,
-.night-landscape .contact-section p,
-.night-landscape .email-link {
-  color: var(--night-text);
-}
-.night-landscape .experience-section {
+.landscape-body .experience-section {
   border-top: 0;
 }
-.night-landscape .timeline {
-  border-color: #dbe6f444;
-}
-.night-landscape .timeline-dot {
-  background: var(--night-gold);
-  border-color: #1c3248;
-  box-shadow: 0 0 0 1px #f2d59672;
-}
-.night-landscape .experience-meta,
-.night-landscape .contact-section h2 em,
-.night-landscape .contact-star {
-  color: var(--night-gold);
-}
-.night-landscape .project {
-  --line: #e0e5df;
-  color: var(--ink);
-}
-.night-landscape .contact-section {
-  border-color: var(--line);
+.landscape-body .contact-section {
+  border-top: 0;
   background:
-    linear-gradient(180deg, #132438 0%, #132438e8 34%, #122337c9 100%),
+    linear-gradient(
+      180deg,
+      #f0efe5 0%,
+      #f0efe5e8 42%,
+      #e9ede4df 75%,
+      var(--paper)
+    ),
     url('/images/starry-landscape.webp') center 68% / cover;
-}
-.night-landscape .contact-section .button {
-  background: var(--night-gold);
-  color: #182e43;
-}
-.night-landscape .contact-section .button:hover {
-  background: #fae5b7;
 }
 .email-link {
   display: block;

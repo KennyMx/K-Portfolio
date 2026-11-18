@@ -139,7 +139,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="night-landscape">
+        <div className="landscape-body">
           <div className="intro-strip">
             <span>BASED IN BURNABY, BC</span>
             <span className="strip-center">
